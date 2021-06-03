@@ -1,0 +1,29 @@
+
+<div class="list">
+    <h2>List Page</h2>
+<table class="table">
+    <thead>
+      <tr >
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Model</th>
+        <th scope="col">Price</th>
+        <th scope="col">Manufacturere</th>
+        <th scope="col">Date of Man.</th>
+        <th scope="col">Fabric</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of clothList">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.modelName}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.manufacturer}}</td>
+        <td>{{item.dateOfManufacturer}}</td>
+        <td>{{item.fabric}}</td> 
+       </tr>
+      
+    </tbody>
+  </table>
+  </div>

@@ -1,0 +1,52 @@
+<h2 class="mb-5 text-center">Fill up details of cloths</h2>
+<div class="form">
+    <form [formGroup]="clothForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" formControlName="name">
+            <div *ngIf="getControl.name.touched && getControl.name.invalid" class="text-danger">
+            <div *ngIf="getControl.name.errors?.required">Name is required.</div>
+            <div *ngIf="getControl.name.errors?.minlength">Minimum 4 character are required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>model Name</label>
+            <input type="text" class="form-control" formControlName="modelName">
+            <div *ngIf="getControl.modelName.touched && getControl.modelName.invalid" class="text-danger">
+            <div *ngIf="getControl.modelName.errors?.required">modelName is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>price</label>
+            <input type="text" class="form-control" formControlName="price">
+            <div *ngIf="getControl.price.touched && getControl.price.invalid" class="text-danger">
+            <div *ngIf="getControl.price.errors?.required">price is required.</div>
+            <div *ngIf="getControl.price.errors?.pattern" class="text-danger">Number Only</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>fabric</label>
+            <input type="text" class="form-control" formControlName="fabric">
+            <div *ngIf="getControl.fabric.touched && getControl.fabric.invalid" class="text-danger">
+            <div *ngIf="getControl.fabric.errors?.required">fabric is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>manufacturer</label>
+            <input type="text" class="form-control" formControlName="manufacturer">
+            <div *ngIf="getControl.manufacturer.touched && getControl.manufacturer.invalid" class="text-danger">
+            <div *ngIf="getControl.manufacturer.errors?.required">manufacturer is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>dateOfManufacturer</label>
+            <input type="date" class="form-control" formControlName="dateOfManufacturer">
+            <div *ngIf="getControl.dateOfManufacturer.touched && getControl.dateOfManufacturer.invalid" class="text-danger">
+            <div *ngIf="getControl.dateOfManufacturer.errors?.required">dateOfManufacturer is required.</div>
+            </div>
+        </div>
+        <button class="btn btn-danger btn-block mt-5" [disabled]="clothForm.invalid" type="submit">Submit</button>
+    </form>
+</div>
